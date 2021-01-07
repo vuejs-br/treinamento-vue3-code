@@ -1,0 +1,371 @@
+{
+	"info": {
+		"_postman_id": "0111d2c3-1148-45cb-8b9e-02f712115783",
+		"name": "Vue.js Brasil - Feedbacker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Status",
+			"item": [
+				{
+					"name": "Pegar o status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVhYjc1OWY4LWYyMzgtNGZmOS1hZTkxLWVlMTU1ODk4MjMyOSIsImVtYWlsIjoiaWd1aW5AaWd1aW4ubWUiLCJuYW1lIjoiSWdvciBIYWxmZWxkIiwiaWF0IjoxNjA4NTA2ODAwfQ.AXBHWYY1hioeBXQfhxpI9uBGDH3shKqGgWE2JuTOsh4",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Fazer login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVhYjc1OWY4LWYyMzgtNGZmOS1hZTkxLWVlMTU1ODk4MjMyOSIsImVtYWlsIjoiaWd1aW5AaWd1aW4ubWUiLCJuYW1lIjoiSWdvciBIYWxmZWxkIiwiaWF0IjoxNjA4NTA2ODAwfQ.AXBHWYY1hioeBXQfhxpI9uBGDH3shKqGgWE2JuTOsh4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"igor@igor.me\",\n    \"password\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVhYjc1OWY4LWYyMzgtNGZmOS1hZTkxLWVlMTU1ODk4MjMyOSIsImVtYWlsIjoiaWd1aW5AaWd1aW4ubWUiLCJuYW1lIjoiSWdvciBIYWxmZWxkIiwiaWF0IjoxNjA4NTA2ODAwfQ.AXBHWYY1hioeBXQfhxpI9uBGDH3shKqGgWE2JuTOsh4",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar um novo usuário",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc4NzRiNzYwLTIyZTItNDE2NS05NDJhLWE4MDcwODJmNDNhNCIsImVtYWlsIjoiZXZhbi55b3VAZ21haWwuY29tIiwibmFtZSI6IkV2YW4gWW91IiwiaWF0IjoxNjA5ODExOTc4fQ.4M4u5n7n8NMfsNDWNAeLw8q20PBQFFfRHicbwT8r8W8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"evan.you@gmail.com\",\n    \"password\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Pegar os dados do usuário logado",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc4NzRiNzYwLTIyZTItNDE2NS05NDJhLWE4MDcwODJmNDNhNCIsImVtYWlsIjoiZXZhbi55b3VAZ21haWwuY29tIiwibmFtZSI6IkV2YW4gWW91IiwiaWF0IjoxNjA5ODExOTc4fQ.4M4u5n7n8NMfsNDWNAeLw8q20PBQFFfRHicbwT8r8W8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gerar uma nova apiKey",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc4NzRiNzYwLTIyZTItNDE2NS05NDJhLWE4MDcwODJmNDNhNCIsImVtYWlsIjoiZXZhbi55b3VAZ21haWwuY29tIiwibmFtZSI6IkV2YW4gWW91IiwiaWF0IjoxNjA5ODExOTc4fQ.4M4u5n7n8NMfsNDWNAeLw8q20PBQFFfRHicbwT8r8W8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/users/me/apikey",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"me",
+								"apikey"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Feedbacks",
+			"item": [
+				{
+					"name": "Pegar todos os feedbacks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc4NzRiNzYwLTIyZTItNDE2NS05NDJhLWE4MDcwODJmNDNhNCIsImVtYWlsIjoiZXZhbi55b3VAZ21haWwuY29tIiwibmFtZSI6IkV2YW4gWW91IiwiaWF0IjoxNjA5ODExOTc4fQ.4M4u5n7n8NMfsNDWNAeLw8q20PBQFFfRHicbwT8r8W8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/feedbacks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"feedbacks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pegar um feedback pelo ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc4NzRiNzYwLTIyZTItNDE2NS05NDJhLWE4MDcwODJmNDNhNCIsImVtYWlsIjoiZXZhbi55b3VAZ21haWwuY29tIiwibmFtZSI6IkV2YW4gWW91IiwiaWF0IjoxNjA5ODExOTc4fQ.4M4u5n7n8NMfsNDWNAeLw8q20PBQFFfRHicbwT8r8W8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"ISSUE\",\n    \"text\": \"Tem um problema aqui\",\n    \"fingerprint\": \"10wdjas0da93r0jf\",\n    \"device\": \"Chrome 34, Mac OS\",\n    \"page\": \"https://feedbacker.com.br/ajuda\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/feedbacks/880d7708-987b-4016-8fc8-71dcb63fdb91",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"feedbacks",
+								"880d7708-987b-4016-8fc8-71dcb63fdb91"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar um feedback ISSUE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc4NzRiNzYwLTIyZTItNDE2NS05NDJhLWE4MDcwODJmNDNhNCIsImVtYWlsIjoiZXZhbi55b3VAZ21haWwuY29tIiwibmFtZSI6IkV2YW4gWW91IiwiaWF0IjoxNjA5ODExOTc4fQ.4M4u5n7n8NMfsNDWNAeLw8q20PBQFFfRHicbwT8r8W8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"ISSUE\",\n    \"text\": \"Tem um problema aqui\",\n    \"fingerprint\": \"10wdjas0da93r0jf\",\n    \"device\": \"Chrome 34, Mac OS\",\n    \"page\": \"https://feedbacker.com.br/ajuda\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/feedbacks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"feedbacks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar um feedback IDEA",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc4NzRiNzYwLTIyZTItNDE2NS05NDJhLWE4MDcwODJmNDNhNCIsImVtYWlsIjoiZXZhbi55b3VAZ21haWwuY29tIiwibmFtZSI6IkV2YW4gWW91IiwiaWF0IjoxNjA5ODExOTc4fQ.4M4u5n7n8NMfsNDWNAeLw8q20PBQFFfRHicbwT8r8W8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"IDEA\",\n    \"text\": \"E se mudar a cor dessa página?\",\n    \"fingerprint\": \"10wdjas0da93r0jf\",\n    \"device\": \"Chrome 34, Mac OS\",\n    \"page\": \"https://feedbacker.com.br/ajuda\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/feedbacks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"feedbacks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar um feedback OTHER",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc4NzRiNzYwLTIyZTItNDE2NS05NDJhLWE4MDcwODJmNDNhNCIsImVtYWlsIjoiZXZhbi55b3VAZ21haWwuY29tIiwibmFtZSI6IkV2YW4gWW91IiwiaWF0IjoxNjA5ODExOTc4fQ.4M4u5n7n8NMfsNDWNAeLw8q20PBQFFfRHicbwT8r8W8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"OTHER\",\n    \"text\": \"Muito show!\",\n    \"fingerprint\": \"10wdjas0da93r0jf\",\n    \"device\": \"Chrome 34, Mac OS\",\n    \"page\": \"https://feedbacker.com.br/ajuda\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/feedbacks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"feedbacks"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
