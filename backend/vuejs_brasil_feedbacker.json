@@ -43,6 +43,37 @@
 			]
 		},
 		{
+			"name": "Apikey",
+			"item": [
+				{
+					"name": "Checar se a apikey existe",
+					"request": {
+						"method": "HEAD",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/apikey/exists?apikey=fcd5015c-10d3-4e9c-b395-ec7ed8850165",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"apikey",
+								"exists"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "fcd5015c-10d3-4e9c-b395-ec7ed8850165"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Auth",
 			"item": [
 				{
