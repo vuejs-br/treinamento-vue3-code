@@ -65,20 +65,32 @@ function CreateFeedbackHandler (db) {
   }
 
   async function getFeedbacks (ctx) {
-    let {
-      type,
-      limit = 5,
-      offset = 0
-    } = ctx.query
-    let feedbacks = await db.readAll('feedbacks')
+    const { type } = ctx.query
+    let offset = ctx.query.offset ? Number(ctx.query.offset) : 0
+    let limit = ctx.query.limit ? Number(ctx.query.limit) : 5
+
+    let [
+      user,
+      feedbacks
+    ] = await Promise.all([
+      db.readOneById('users', ctx.state.user.id),
+      db.readAll('feedbacks')
+    ])
+
+    if (!user) {
+      ctx.status = 401
+      ctx.body = { error: 'Unauthorized' }
+      return
+    }
 
     feedbacks = feedbacks.filter((feedback) => {
-      return feedback.apiKey === ctx.state.user.apiKey
+      return feedback.apiKey === user.apiKey
     })
+    const total = feedbacks.length
 
     if (type) {
       feedbacks = feedbacks.filter((feedback) => {
-        return feedback.type === type
+        return feedback.type === String(type).toUpperCase()
       })
     }
 
@@ -89,40 +101,61 @@ function CreateFeedbackHandler (db) {
       offset = limit
     }
 
-    feedbacks = feedbacks.slice(offset, limit)
+    feedbacks = feedbacks.slice(offset, feedbacks.length).slice(0, limit)
 
     ctx.status = 200
-    ctx.body = feedbacks || []
+    ctx.body = {
+      results: feedbacks || [],
+      pagination: { offset, limit, total }
+    }
   }
 
-  async function getFeedbacksByFingerprint (ctx) {
-    const { fingerprint } = ctx.request.query
-    const feedbacks = await db.readAll('feedbacks')
-    const feedbacksFiltered = feedbacks.map((feedback) => {
-      return feedback.fingerprint === fingerprint
+  async function getSummary (ctx) {
+    let [
+      user,
+      feedbacks
+    ] = await Promise.all([
+      db.readOneById('users', ctx.state.user.id),
+      db.readAll('feedbacks')
+    ])
+
+    if (!user) {
+      ctx.status = 401
+      ctx.body = { error: 'Unauthorized. User not found with this token' }
+      return
+    }
+
+    feedbacks = feedbacks.filter((feedback) => {
+      return feedback.apiKey === user.apiKey
+    })
+
+    let all = 0
+    let issue = 0
+    let idea = 0
+    let other = 0
+
+    feedbacks.forEach((feedback) => {
+      all++
+
+      if (feedback.type === 'ISSUE') {
+        issue++
+      }
+      if (feedback.type === 'IDEA') {
+        idea++
+      }
+      if (feedback.type === 'OTHER') {
+        other++
+      }
     })
 
     ctx.status = 200
-    ctx.body = feedbacksFiltered || []
-  }
-
-  async function getFeedbackById (ctx) {
-    const { id } = ctx.params
-    const feedback = await db.readOneById('feedback', id)
-    if (!feedback) {
-      ctx.status = 404
-      ctx.body = { error: 'Feedback not found' }
-      return
-    }
-    ctx.status = 200
-    ctx.body = feedback
+    ctx.body = { all, issue, idea, other }
   }
 
   return {
     create,
     getFeedbacks,
-    getFeedbacksByFingerprint,
-    getFeedbackById
+    getSummary
   }
 }
 

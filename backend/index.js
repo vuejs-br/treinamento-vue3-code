@@ -34,9 +34,11 @@ router.get('/users/me', authMiddleware, usersHandler.getLoggerUser)
 router.post('/users/me/apikey', authMiddleware, usersHandler.generateApiKey)
 router.get('/feedbacks', authMiddleware, feedbacksHandler.getFeedbacks)
 router.post('/feedbacks', authMiddleware, feedbacksHandler.create)
-router.get('/feedbacks/:id', authMiddleware, feedbacksHandler.getFeedbackById)
+router.get('/feedbacks/summary', authMiddleware, feedbacksHandler.getSummary)
 app.use(router.routes())
 app.use(router.allowedMethods())
 app.listen(PORT, () => {
   console.log(`Server running http://localhost:${PORT}`)
 })
+
+module.exports = app

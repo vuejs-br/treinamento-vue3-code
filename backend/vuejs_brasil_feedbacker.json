@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0111d2c3-1148-45cb-8b9e-02f712115783",
+		"_postman_id": "251372f2-e473-491b-b440-4feb3deff2ab",
 		"name": "Vue.js Brasil - Feedbacker",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -40,8 +40,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Auth",
@@ -126,8 +125,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Users",
@@ -192,8 +190,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Feedbacks",
@@ -224,7 +221,7 @@
 					"response": []
 				},
 				{
-					"name": "Pegar um feedback pelo ID",
+					"name": "Pegar índice de feedbacks",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -233,7 +230,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc4NzRiNzYwLTIyZTItNDE2NS05NDJhLWE4MDcwODJmNDNhNCIsImVtYWlsIjoiZXZhbi55b3VAZ21haWwuY29tIiwibmFtZSI6IkV2YW4gWW91IiwiaWF0IjoxNjA5ODExOTc4fQ.4M4u5n7n8NMfsNDWNAeLw8q20PBQFFfRHicbwT8r8W8",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVhYjc1OWY4LWYyMzgtNGZmOS1hZTkxLWVlMTU1ODk4MjMyOSIsImVtYWlsIjoiaWdvckBpZ29yLm1lIiwibmFtZSI6Iklnb3IgSGFsZmVsZCIsImlhdCI6MTYxMDQyNjg4OH0.88S5YLssZhC_TgotUZFDlcw5Cc3xlQTB0mqsQcQu1dY",
 								"type": "text"
 							}
 						],
@@ -247,7 +244,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/feedbacks/880d7708-987b-4016-8fc8-71dcb63fdb91",
+							"raw": "http://localhost:3000/feedbacks/summary",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -255,7 +252,7 @@
 							"port": "3000",
 							"path": [
 								"feedbacks",
-								"880d7708-987b-4016-8fc8-71dcb63fdb91"
+								"summary"
 							]
 						}
 					},
@@ -363,9 +360,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

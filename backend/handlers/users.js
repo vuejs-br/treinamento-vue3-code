@@ -70,25 +70,8 @@ function CreateUserHandler (db) {
     ctx.body = { error: 'User not created' }
   }
 
-  async function getOneById (ctx) {
-    const { id } = ctx.params
-    const user = await db.readOneById('users', id)
-    if (!user) {
-      ctx.status = 404
-      ctx.body = { error: 'User not found' }
-      return
-    }
-
-    ctx.status = 200
-    ctx.body = {
-      ...user,
-      password: '*****'
-    }
-  }
-
   return {
     create,
-    getOneById,
     generateApiKey,
     getLoggerUser
   }
