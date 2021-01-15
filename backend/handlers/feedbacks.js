@@ -86,13 +86,14 @@ function CreateFeedbackHandler (db) {
     feedbacks = feedbacks.filter((feedback) => {
       return feedback.apiKey === user.apiKey
     })
-    const total = feedbacks.length
 
     if (type) {
       feedbacks = feedbacks.filter((feedback) => {
         return feedback.type === String(type).toUpperCase()
       })
     }
+
+    const total = feedbacks.length
 
     if (limit > 10) {
       limit = 5
@@ -111,6 +112,7 @@ function CreateFeedbackHandler (db) {
   }
 
   async function getSummary (ctx) {
+    const { type } = ctx.query
     let [
       user,
       feedbacks
@@ -128,6 +130,12 @@ function CreateFeedbackHandler (db) {
     feedbacks = feedbacks.filter((feedback) => {
       return feedback.apiKey === user.apiKey
     })
+
+    if (type) {
+      feedbacks = feedbacks.filter((feedback) => {
+        return feedback.type === String(type).toUpperCase()
+      })
+    }
 
     let all = 0
     let issue = 0
