@@ -84,7 +84,7 @@ function CreateFeedbackHandler (db) {
     }
 
     feedbacks = feedbacks.filter((feedback) => {
-      return feedback.apiKey === user.apiKey
+      return user.apiKey.includes(feedback.apiKey)
     })
 
     if (type) {
@@ -128,7 +128,7 @@ function CreateFeedbackHandler (db) {
     }
 
     feedbacks = feedbacks.filter((feedback) => {
-      return feedback.apiKey === user.apiKey
+      return user.apiKey.includes(feedback.apiKey)
     })
 
     if (type) {

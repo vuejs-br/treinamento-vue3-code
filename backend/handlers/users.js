@@ -21,7 +21,10 @@ function CreateUserHandler (db) {
     const apiKey = uuidv4()
     const { id } = ctx.state.user
 
-    const updated = await db.update('users', id, { apiKey })
+    const user = await db.readOneById('users', id)
+    const updated = await db.update('users', id, {
+      apiKey: [...user.apikey, apiKey]
+    })
     if (updated) {
       ctx.status = 202
       ctx.body = { apiKey }
@@ -55,7 +58,7 @@ function CreateUserHandler (db) {
       name,
       email,
       password,
-      apikey: uuidv4(),
+      apikey: [uuidv4()],
       createdAt: new Date().getTime()
     }
 
