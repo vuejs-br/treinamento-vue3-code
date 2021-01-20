@@ -13,11 +13,15 @@
     "@tailwindcss/postcss7-compat": "^2.0.2",
     "animate.css": "^4.1.1",
     "autoprefixer": "^9.8.6",
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "postcss": "^7.0.35",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
+    "tiny-emitter": "^2.1.0",
+    "vee-validate": "^4.1.9",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.0-0"
+    "vue-router": "^4.0.0-0",
+    "vue-toastification": "^2.0.0-beta.9"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

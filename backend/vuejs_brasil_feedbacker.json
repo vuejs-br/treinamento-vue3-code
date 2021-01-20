@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "bd1ee685-5d10-4e07-941a-39d1954ba426",
+		"_postman_id": "03caccb8-c176-4e3f-ae31-751901560b3c",
 		"name": "Vue.js Brasil - Feedbacker",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -93,7 +93,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/auth/login?",
+							"raw": "http://localhost:3000/auth/login",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -102,13 +102,6 @@
 							"path": [
 								"auth",
 								"login"
-							],
-							"query": [
-								{
-									"key": "Authorization",
-									"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVhYjc1OWY4LWYyMzgtNGZmOS1hZTkxLWVlMTU1ODk4MjMyOSIsImVtYWlsIjoiaWd1aW5AaWd1aW4ubWUiLCJuYW1lIjoiSWdvciBIYWxmZWxkIiwiaWF0IjoxNjA4NTA2ODAwfQ.AXBHWYY1hioeBXQfhxpI9uBGDH3shKqGgWE2JuTOsh4",
-									"disabled": true
-								}
 							]
 						}
 					},
@@ -116,11 +109,8 @@
 				},
 				{
 					"name": "Criar um novo usuário",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [
 							{
 								"key": "Authorization",
@@ -130,7 +120,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"evan.you@gmail.com\",\n    \"password\": \"1234\"\n}",
+							"raw": "{\n\t\"name\": \"Evan You\",\n    \"email\": \"evan.you@gmail.com\",\n    \"password\": \"1234\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -138,15 +128,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/users/me",
+							"raw": "http://localhost:3000/auth/register",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"users",
-								"me"
+								"auth",
+								"register"
 							]
 						}
 					},
