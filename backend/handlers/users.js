@@ -23,7 +23,7 @@ function CreateUserHandler (db) {
 
     const user = await db.readOneById('users', id)
     const updated = await db.update('users', id, {
-      apiKey: [...user.apikey, apiKey]
+      apiKey: [...user.apiKey, apiKey]
     })
     if (updated) {
       ctx.status = 202
