@@ -87,14 +87,13 @@ function CreateFeedbackHandler (db) {
       return user.apiKey.includes(feedback.apiKey)
     })
 
-    let nf = []
     if (type) {
-      nf = feedbacks.filter((feedback) => {
+      feedbacks = feedbacks.filter((feedback) => {
         return feedback.type === String(type).toUpperCase()
       })
     }
 
-    const total = nf.length
+    const total = feedbacks.length
 
     if (limit > 10) {
       limit = 5
