@@ -10,7 +10,10 @@ function CreateUserHandler (db) {
       return
     }
 
-    const userResponse = { ...user }
+    const userResponse = {
+      ...user,
+      apiKey: user.apiKey[user.apiKey.length - 1]
+    }
 
     delete userResponse.password
     ctx.status = 200
