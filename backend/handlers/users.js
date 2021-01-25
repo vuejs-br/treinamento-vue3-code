@@ -61,7 +61,7 @@ function CreateUserHandler (db) {
       name,
       email,
       password,
-      apikey: [uuidv4()],
+      apiKey: [uuidv4()],
       createdAt: new Date().getTime()
     }
 
