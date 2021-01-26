@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HeaderLogged /> should render header logged correctly 1`] = `
+<div class="flex items-center justify-between w-4/5 max-w-6xl py-10">
+  <div class="w-28 lg:w-36"><img class="w-full" alt="logo"></div>
+  <div class="flex">
+    <ul class="flex list-none">
+      <li class="px-6 py-2 mr-2 font-bold text-white rounded-full cursor-pointer focus:outline-none"> Credenciais </li>
+      <li class="px-6 py-2 mr-2 font-bold text-white rounded-full cursor-pointer focus:outline-none"> Feedbacks </li>
+      <li id="logout-button" class="px-6 py-2 font-bold bg-white rounded-full cursor-pointer text-brand-main focus:outline-none">...</li>
+    </ul>
+  </div>
+</div>
+`;
