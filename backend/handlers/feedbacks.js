@@ -48,6 +48,9 @@ function CreateFeedbackHandler (db) {
       return
     }
 
+    // @TODO: for this, I don't validate if apikey is valid.
+    // Just for study purposes.
+
     const feedback = {
       text,
       fingerprint,
@@ -59,7 +62,7 @@ function CreateFeedbackHandler (db) {
       createdAt: new Date().getTime()
     }
 
-    const inserted = await db.insert('feedback', feedback)
+    const inserted = await db.insert('feedbacks', feedback)
     if (inserted) {
       ctx.status = 201
       ctx.body = feedback
