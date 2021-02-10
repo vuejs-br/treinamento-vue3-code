@@ -374,16 +374,10 @@
 					"name": "Criar um feedback ISSUE",
 					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc4NzRiNzYwLTIyZTItNDE2NS05NDJhLWE4MDcwODJmNDNhNCIsImVtYWlsIjoiZXZhbi55b3VAZ21haWwuY29tIiwibmFtZSI6IkV2YW4gWW91IiwiaWF0IjoxNjA5ODExOTc4fQ.4M4u5n7n8NMfsNDWNAeLw8q20PBQFFfRHicbwT8r8W8",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"type\": \"ISSUE\",\n    \"text\": \"Tem um problema aqui\",\n    \"fingerprint\": \"10wdjas0da93r0jf\",\n    \"device\": \"Chrome 34, Mac OS\",\n    \"page\": \"https://feedbacker.com.br/ajuda\"\n}",
+							"raw": "{\n    \"type\": \"ISSUE\",\n    \"text\": \"Tem um problema aqui\",\n    \"fingerprint\": \"10wdjas0da93r0jf\",\n    \"apiKey\": \"fcd5015c-10d3-4e9c-b395-ec7ed8850165\",\n    \"device\": \"Chrome 34, Mac OS\",\n    \"page\": \"https://feedbacker.com.br/ajuda\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -408,16 +402,10 @@
 					"name": "Criar um feedback IDEA",
 					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc4NzRiNzYwLTIyZTItNDE2NS05NDJhLWE4MDcwODJmNDNhNCIsImVtYWlsIjoiZXZhbi55b3VAZ21haWwuY29tIiwibmFtZSI6IkV2YW4gWW91IiwiaWF0IjoxNjA5ODExOTc4fQ.4M4u5n7n8NMfsNDWNAeLw8q20PBQFFfRHicbwT8r8W8",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"type\": \"IDEA\",\n    \"text\": \"E se mudar a cor dessa página?\",\n    \"fingerprint\": \"10wdjas0da93r0jf\",\n    \"device\": \"Chrome 34, Mac OS\",\n    \"page\": \"https://feedbacker.com.br/ajuda\"\n}",
+							"raw": "{\n    \"type\": \"IDEA\",\n    \"text\": \"E se mudar a cor dessa página?\",\n    \"fingerprint\": \"10wdjas0da93r0jf\",\n    \"apiKey\": \"fcd5015c-10d3-4e9c-b395-ec7ed8850165\",\n    \"device\": \"Chrome 34, Mac OS\",\n    \"page\": \"https://feedbacker.com.br/ajuda\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -442,16 +430,10 @@
 					"name": "Criar um feedback OTHER",
 					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc4NzRiNzYwLTIyZTItNDE2NS05NDJhLWE4MDcwODJmNDNhNCIsImVtYWlsIjoiZXZhbi55b3VAZ21haWwuY29tIiwibmFtZSI6IkV2YW4gWW91IiwiaWF0IjoxNjA5ODExOTc4fQ.4M4u5n7n8NMfsNDWNAeLw8q20PBQFFfRHicbwT8r8W8",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"type\": \"OTHER\",\n    \"text\": \"Muito show!\",\n    \"fingerprint\": \"10wdjas0da93r0jf\",\n    \"device\": \"Chrome 34, Mac OS\",\n    \"page\": \"https://feedbacker.com.br/ajuda\"\n}",
+							"raw": "{\n    \"type\": \"OTHER\",\n    \"text\": \"Muito show!\",\n    \"fingerprint\": \"10wdjas0da93r0jf\",\n    \"apiKey\": \"fcd5015c-10d3-4e9c-b395-ec7ed8850165\",\n    \"device\": \"Chrome 34, Mac OS\",\n    \"page\": \"https://feedbacker.com.br/ajuda\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
